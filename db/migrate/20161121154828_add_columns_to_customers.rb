@@ -4,6 +4,5 @@ class AddColumnsToCustomers < ActiveRecord::Migration[5.0]
     add_column :customers, :last_name, :string
     add_column :customers, :address, :string
     add_column :customers, :phone_number, :string
-    add_column :customers, :email, :string
   end
 end
