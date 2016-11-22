@@ -3,7 +3,7 @@
     <div class="row" style="position: relative" >
       <h1>Some Stuff</h1>
       <p>Very cool stuff, useful and smart</p>
-      <%= form_tag bookings_path, method: "get", class: "form-inline" do %>
+      <%= form_tag businesses_path, method: "get", class: "form-inline" do %>
         <%= text_field_tag :date, nil, class: 'form-control' %>
         <%= submit_tag 'Search', class: 'btn btn-primary' %>
       <% end %>
