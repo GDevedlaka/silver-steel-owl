@@ -8,14 +8,14 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+    <!--<form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
 
-    <!-- Different navigation if login or not -->
+     Different navigation if login or not -->
     <% if customer_signed_in? %>
 
       <!-- Notification -->
@@ -87,9 +87,11 @@
     <% else %>
 
       <!-- Login text link -->
+      <div class="navbar-login">
       <%= link_to "Customer sign in" ,new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Business sign in" ,new_business_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
+    </div>
 
     <!-- Button (call-to-action) -->
     <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
