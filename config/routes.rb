@@ -4,7 +4,4 @@ Rails.application.routes.draw do
   resources :bookings
   resources :businesses, except: :destroy
   root to: 'pages#home'
-
-  get '/businesses/all', to: 'businesses#index'
-
 end
