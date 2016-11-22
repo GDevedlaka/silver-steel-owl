@@ -71,8 +71,10 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    geocoder (1.4.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -193,6 +195,8 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
