@@ -1,0 +1,36 @@
+<div class="banner-show-business" style="background-image: linear-gradient(-225deg, rgba(0,231,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%# cl_image_path @business.photo.path, height: 300, width: 400, crop: :fill %>');">
+
+  <div class="banner-content">
+  <h1><strong><%= @business.name %></strong></h1>
+  <h3><%= @business.address %></h3>
+
+  <%= button_to "Book", new_booking_path(@business.id), method: 'get' %>
+  </div>
+
+</div>
+
+  <div id="map" style="width: 100%; height: 200px;"></div>
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers([
+            {
+              "lat": <%= @business.latitude %>,
+              "lng": <%= @business.longitude %>
+            }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
