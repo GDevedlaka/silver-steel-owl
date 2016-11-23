@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
+gem 'simple_calendar', '~> 2.2', '>= 2.2.1'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
