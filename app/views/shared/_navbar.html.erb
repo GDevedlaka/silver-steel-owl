@@ -1,3 +1,15 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <% if business_signed_in? %>
+  <%= link_to business_path(current_business), class: "navbar-wagon-brand" do %>
+    <%= image_tag "tealeaflogo.png" %>
+  <% end %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "tealeaflogo.png" %>
+    <% end %>
+  <% end %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -11,12 +23,6 @@
 
      Different navigation if login or not -->
     <% if customer_signed_in? %>
-    <div class="navbar-wagon">
-      <!-- Logo -->
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "tealeaflogo.png" %>
-      <% end %>
-
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
@@ -51,44 +57,35 @@
       </div>
 
     <% elsif business_signed_in? %>
-      <div class="navbar-wagon">
-        <!-- Logo -->
-        <%= link_to business_path(current_business), class: "navbar-wagon-brand" do %>
-          <%= image_tag "tealeaflogo.png" %>
-        <% end %>
-      </div>
 
-      <div class="navbar-wagon-right">
+      <!-- Notification -->
+      <% link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+        <div class="badge-container">
+          <i class="fa fa-envelope-o"></i>
+          <div class="badge badge-blue">3</div>
+        </div>
+      <% end %>
 
-        <!-- Notification -->
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-          <div class="badge-container">
-            <i class="fa fa-envelope-o"></i>
-            <div class="badge badge-blue">X</div>
-          </div>
-        <% end %>
-
-        <!-- Profile picture and dropdown -->
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to edit_business_registration_path do %>
-                  <i class="fa fa-pencil"></i> <%= t(".edit", default: "Edit page") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to business_bookings_path(current_business) do %>
-                  <i class="fa fa-bell"></i> <%= t(".bookings", default: "View bookings") %>
-                <% end %>
-              <li>
-                <%= link_to destroy_business_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to edit_business_registration_path do %>
+                <i class="fa fa-pencil"></i> <%= t(".edit", default: "Edit page") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to business_bookings_path(current_business) do %>
+                <i class="fa fa-bell"></i> <%= t(".bookings", default: "View bookings") %>
+              <% end %>
+            <li>
+              <%= link_to destroy_business_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -117,4 +114,3 @@
     </div>
   </div>
 </div>
-
