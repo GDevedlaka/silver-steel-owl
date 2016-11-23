@@ -4,7 +4,7 @@
   <h1><strong><%= @business.name %></strong></h1>
   <h3><%= @business.address %></h3>
 
-  <%= button_to "Book", business_path(@business.id), method: 'get' %>
+  <%= button_to "Book", business_path(@business.id), method: 'get', class: "btn btn-primary" %>
   </div>
 
 </div>
