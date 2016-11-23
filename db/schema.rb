@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20161122155918) do
   end
 
   add_foreign_key "bookings", "customers"
-  add_foreign_key "bookings", "services"
+  add_foreign_key "boorqikings", "services"
   add_foreign_key "businesses", "services"
   add_foreign_key "services", "businesses"
 end

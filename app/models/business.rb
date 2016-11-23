@@ -5,7 +5,7 @@ class Business < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-  has_many :services
+  has_many :services, dependent: :destroy
 end
 
 
