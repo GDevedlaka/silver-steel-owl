@@ -18,7 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "geocoder"
 gem 'coffee-rails'
-gem "rails-assets-underscore"
+# gem "rails-assets-underscore"
 gem "gmaps4rails"
 
 gem 'momentjs-rails', '>= 2.9.0'
