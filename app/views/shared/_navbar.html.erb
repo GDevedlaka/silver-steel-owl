@@ -52,8 +52,11 @@
 
     <% elsif business_signed_in? %>
 
+      <%= link_to "Access my business page", business_path(current_business), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Handle bookings", business_bookings_path(current_business),class: "navbar-wagon-item navbar-wagon-link" %>
+
       <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+      <% link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="badge badge-blue">3</div>
@@ -94,7 +97,7 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
