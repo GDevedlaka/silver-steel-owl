@@ -5,8 +5,6 @@ class Business < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-  has_many :customers, through: :bookings
-  has_many :bookings
   has_many :services
 end
 

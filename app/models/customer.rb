@@ -4,4 +4,5 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :businesses, through: :bookings
+  has_many :bookings
 end
