@@ -1,3 +1,18 @@
 <h1> Bookings Index </h1>
+<div class="bookings">
+<h1><center><%=@bookings.size %> locations match your criteria:</center></h1>
+</div>
 
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |s| %>
+       <%= link_to(business_path(s.id), class: "col-xs-12 col-sm-4") do %>
+       <div class="card">
+          <h4 style="color: black">£<%= s.price %></h4>
+          <h4> <%= s.status %></h4>
+       </div>
+       <% end %>
+      <% end %>
+  </div>
+</div>
 

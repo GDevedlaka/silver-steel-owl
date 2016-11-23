@@ -9,6 +9,7 @@
 Business.destroy_all
 Service.destroy_all
 Customer.destroy_all
+Booking.destroy_all
 
 davesbarber = Business.create!(address: "22 Elder Street, London", name: "Dave's Barber", phone_number: "020 8343 2343", email: "dave@gmail.com", password: "dave123")
 jimsdentist = Business.create!(address: "20 Folgate Street, London", name: "Jim's Dentist", phone_number: "020 2343 6763", email: "jim@gmail.com", password: "jim123")
