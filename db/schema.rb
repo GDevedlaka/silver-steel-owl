@@ -16,8 +16,15 @@ ActiveRecord::Schema.define(version: 20161122155918) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "booking_time"
+    t.integer  "price"
+    t.string   "status"
+    t.integer  "customer_id"
+    t.integer  "service_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["customer_id"], name: "index_bookings_on_customer_id", using: :btree
+    t.index ["service_id"], name: "index_bookings_on_service_id", using: :btree
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -66,9 +73,17 @@ ActiveRecord::Schema.define(version: 20161122155918) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",        default: "", null: false
+    t.integer  "duration"
+    t.integer  "price"
+    t.integer  "business_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["business_id"], name: "index_services_on_business_id", using: :btree
   end
 
+  add_foreign_key "bookings", "customers"
+  add_foreign_key "bookings", "services"
   add_foreign_key "businesses", "services"
+  add_foreign_key "services", "businesses"
 end
