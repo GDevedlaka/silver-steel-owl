@@ -11,9 +11,9 @@ Service.destroy_all
 Customer.destroy_all
 Booking.destroy_all
 
-davesbarber = Business.create!(address: "22 Elder Street, London", name: "Dave's Barber", phone_number: "020 8343 2343", email: "dave@gmail.com", password: "dave123")
-jimsdentist = Business.create!(address: "20 Folgate Street, London", name: "Jim's Dentist", phone_number: "020 2343 6763", email: "jim@gmail.com", password: "jim123")
-judysnails = Business.create!(address: "10 Baker Street, London", name: "Judy's Nails", phone_number: "020 893 4479", email: "judy@gmail.com", password: "judy123")
+davesbarber = Business.create!(address: "22 Elder Street, London", name: "Dave's Barber", phone_number: "020 8343 2343", email: "dave@gmail.com", password: "dave123", description: "Most professional barber in Paddington")
+jimsdentist = Business.create!(address: "20 Folgate Street, London", name: "Jim's Dentist", phone_number: "020 2343 6763", email: "jim@gmail.com", password: "jim123", description: "Most professional dentist in Folgate Street")
+judysnails = Business.create!(address: "10 Baker Street, London", name: "Judy's Nails", phone_number: "020 893 4479", email: "judy@gmail.com", password: "judy123", description: "Most professional nails specialist in Baker Street")
 
 checkup = Service.create!(name: "full checkup", price: 200, duration: 30, business: jimsdentist)
 filling = Service.create!(name: "filling", price: 100, duration: 15, business: jimsdentist)
