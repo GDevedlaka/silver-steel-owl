@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :bookings, except: [:new, :edit, :show]
   end
   root to: 'pages#home'
+  #business_root to: ''
 end
