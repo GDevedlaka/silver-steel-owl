@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124150502) do
+ActiveRecord::Schema.define(version: 20161124174755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20161124150502) do
     t.string   "email"
     t.string   "name"
     t.string   "phone"
+    t.integer  "business_id"
+    t.index ["business_id"], name: "index_bookings_on_business_id", using: :btree
     t.index ["customer_id"], name: "index_bookings_on_customer_id", using: :btree
     t.index ["service_id"], name: "index_bookings_on_service_id", using: :btree
   end
@@ -86,6 +88,7 @@ ActiveRecord::Schema.define(version: 20161124150502) do
     t.index ["business_id"], name: "index_services_on_business_id", using: :btree
   end
 
+  add_foreign_key "bookings", "businesses"
   add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "services"
   add_foreign_key "businesses", "services"
