@@ -20,6 +20,37 @@
 </div>
 
 
+<div class="container" style="margin-top: 15px;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <h4>Our Services</h4>
+      <ul>
+        <% services = @service %>
+        <li><%= services[0].name%>, £<%= services[0].price%></li>
+        <li><%= services[1].name%>, £<%= services[1].price%></li>
+        <li><%= services[2].name%>, £<%= services[2].price%></li>
+      </ul>
+    </div>
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <%= image_tag "tealeaflogo.png" %>
+      </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <%= simple_form_for @booking do |f| %>
+      <%= f.input :email, required: true, placeholder: "your@name.com" %>
+      <%= f.input :name, placeholder: "George D." %>
+    <div class="form-actions">
+      <%= f.button :submit, "Book", class: "btn btn-primary", style: "width: 100%" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
