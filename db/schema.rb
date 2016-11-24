@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20161124174755) do
     t.integer  "service_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "end_time"
+    t.datetime "start_time"
     t.string   "email"
     t.string   "name"
     t.string   "phone"
