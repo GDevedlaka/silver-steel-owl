@@ -40,7 +40,7 @@
 
 <div class="container">
   <div class="row">
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@business, @booking] do |f| %>
       <%= f.input :email, required: true, placeholder: "your@name.com" %>
       <%= f.input :name, placeholder: "George D." %>
     <div class="form-actions">
