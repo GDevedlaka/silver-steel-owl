@@ -78,8 +78,11 @@
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <% if customer_signed_in? %>
           <%= render "shared/customer_dropdown" %>
-        <% else %>
+        <% elsif business_signed_in? %>
           <%= render "shared/business_dropdown" %>
+        <% else %>
+          <%= link_to "Customer sign in" ,new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Business sign in" ,new_business_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% end %>
       </div>
     </div>
