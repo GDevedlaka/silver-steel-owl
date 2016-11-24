@@ -12,6 +12,7 @@ class BusinessesController < ApplicationController
 
   def edit
   end
+
 end
 
 
