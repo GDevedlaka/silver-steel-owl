@@ -7,7 +7,7 @@ class BusinessesController < ApplicationController
   def show
     @business = Business.find(params[:id])
     @booking = Booking.new
-    @services = Service.all
+    @services = @business.services
   end
 
   def edit
