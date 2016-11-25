@@ -1,8 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "businessStock.jpg" %>');">
-  <div class="banner-content">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "randomimage/#{rand(6)}.jpg" %>');">
+ <div class="banner-content">
 
     <h1>Do you own a business?</h1>
-    <p>Create a website and benefit from our online bookings service.</p>
+    <p>Create a website and benefit from our online bookings and appointments service.</p>
     <%= link_to "Sign Up" ,new_business_registration_path, class: "btn btn-primary" %>
 
   </div>
