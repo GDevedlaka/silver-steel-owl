@@ -14,6 +14,7 @@ class BusinessesController < ApplicationController
 
   def edit
     @business = Business.find(params[:id])
+    @service = Service.new
   end
 
   def update
