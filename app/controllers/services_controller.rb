@@ -5,7 +5,7 @@ class ServicesController < ApplicationController
     @business = Business.find(params[:business_id])
     @service.business = @business
     if @service.save
-      redirect_to root_path
+      redirect_to business_path(@business)
       flash[:notice] = "Service added."
     else
       redirect_to business_path(@business)

@@ -31,7 +31,7 @@
       <h4>Our Services</h4>
       <ul>
         <% @services.each do |service| %>
-         <li> <%= service.name%>, £<%= service.price%> </li>
+         <li> <%= service.name%>, £<%= service.price%>, <%= service.duration%> minutes.</li>
         <% end %>
         <li>Add a service
         <%= link_to edit_business_path(@business) do %>
