@@ -8,7 +8,6 @@
 
 Business.destroy_all
 Service.destroy_all
-Customer.destroy_all
 Booking.destroy_all
 
 davesbarber = Business.create!(address: "22 Elder Street, London", name: "Dave's Barber", phone_number: "020 8343 2343", email: "dave@gmail.com", password: "dave123", description: "Most professional barber in Paddington")
@@ -19,11 +18,7 @@ checkup = Service.create!(name: "full checkup", price: 200, duration: 30, busine
 filling = Service.create!(name: "filling", price: 100, duration: 15, business: jimsdentist)
 tooth = Service.create!(name: "tooth removal", price: 300, duration: 60, business: jimsdentist)
 
-george = Customer.create!(email: "george@gmail.com", password: "george123", first_name: "george", last_name: "devedlaka", address: "10 Elder Street, London", phone_number: "020 999 9999")
-matt = Customer.create!(email: "matt@gmail.com", password: "matt123", first_name: "matt", last_name: "noble", address: "1 Knightsbridge, London", phone_number: "020 555 5555")
-alex = Customer.create!(email: "alex@gmail.com", password: "alex123", first_name: "alex", last_name: "benoit", address: "10 Downing Street, London", phone_number: "020 888 8888")
-
-Booking.create!(booking_time: Time.now, price: 200, status: "pending", service: checkup, customer: george)
-Booking.create!(booking_time: Time.now, price: 200, status: "approved", service: checkup, customer: matt)
-Booking.create!(booking_time: Time.now, price: 300, status: "pending", service: tooth, customer: alex)
+Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "pending", service: checkup)
+Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "approved", service: checkup)
+Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 300, status: "pending", service: tooth)
 

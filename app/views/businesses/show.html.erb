@@ -46,11 +46,11 @@
         <%= f.input :email, required: true, placeholder: "your@name.com" %>
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
-        <%= f.input :service, as: :select, collection: @services %>
+        <%= f.association :service %>
       <div class="form-actions">
-        <%= f.button :submit, "Book", class: "btn btn-primary", style: "width: 100%" %>
-      <% end %>
+        <%= f.submit "Book", class: "btn btn-primary", style: "width: 100%" %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
