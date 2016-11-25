@@ -3,8 +3,6 @@
   <div class="banner-content text-center">
       <h1><strong><%= @business.name %></strong></h1>
       <h3><%= @business.address %></h3>
-
-      <%= button_to "Book", business_path(@business.id), method: 'get', class: "btn btn-primary" %>
   </div>
 
 </div>
@@ -17,7 +15,7 @@
         <p><%= @business.description %></p>
       <% else %>
         <p>Write about <%=@business.name%> here.
-          <%= link_to edit_business_path(current_business) do %>
+          <%= link_to edit_business_path(@business) do %>
             <i class="fa fa-pencil"></i></p>
           <% end %>
         <% end %>
@@ -35,6 +33,11 @@
         <% @services.each do |service| %>
          <li> <%= service.name%>, £<%= service.price%> </li>
         <% end %>
+        <li>Add a service
+        <%= link_to edit_business_path(@business) do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+        </li>
       </ul>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
