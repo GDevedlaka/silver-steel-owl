@@ -12,11 +12,11 @@ class BookingsController < ApplicationController
     @business = Business.find(params[:business_id])
     @booking.business = @business
     if @booking.save
-      redirect_to root_path
-      flash[:notice] = "Your bookings has been completed."
+      redirect_to business_path(@business)
+      flash[:notice] = "Your booking has been made. You will receive confirmation by email shortly."
     else
       redirect_to business_path(@business)
-      flash[:alert]
+      flash[:alert] = "An error has occurred. Please try again."
     end
   end
 
