@@ -13,8 +13,15 @@
 <div class="container">
   <div class="row" style="margin-top: 50px">
     <div class="col-xs-12 col-sm-4 col-md-4 card">
-      <p><%= @business.description %></p>
-    </div>
+      <% if @business.description? %>
+        <p><%= @business.description %></p>
+      <% else %>
+        <p>Write about <%=@business.name%> here.
+          <%= link_to edit_business_path(current_business) do %>
+            <i class="fa fa-pencil"></i></p>
+          <% end %>
+        <% end %>
+      </div>
     <div class="col-xs-12 col-sm-5 col-sm-offset-2 col-md-6 card" id="map" style="width: 45%; height: 250px;"></div>
   </div>
 </div>
@@ -24,12 +31,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <h4>Our Services</h4>
-      <ul>
-        <% services = @services %>
-        <li><%= services[0].name%>, £<%= services[0].price%></li>
-        <li><%= services[1].name%>, £<%= services[1].price%></li>
-        <li><%= services[2].name%>, £<%= services[2].price%></li>
-      </ul>
+      <p></p>
+      <%= link_to edit_business_path(current_business) do %>
+      Add new <i class="fa fa-plus"></i> <% end %>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <%= image_tag "djinn2.png" %>
