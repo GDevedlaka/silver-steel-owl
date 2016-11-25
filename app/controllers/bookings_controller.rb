@@ -8,12 +8,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params[:booking])
+    @booking = Booking.new(booking_params)
     @business = Business.find(params[:business_id])
     @booking.business = @business
-    binding.pry
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to root_path
+      flash[:notice] = "Your bookings has been completed."
     else
       redirect_to business_path(@business)
       flash[:alert]
