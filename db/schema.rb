@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124174755) do
+ActiveRecord::Schema.define(version: 20161125115933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,18 +19,14 @@ ActiveRecord::Schema.define(version: 20161124174755) do
     t.datetime "booking_time"
     t.integer  "price"
     t.string   "status"
-    t.integer  "customer_id"
     t.integer  "service_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.datetime "end_time"
-    t.datetime "start_time"
     t.string   "email"
     t.string   "name"
     t.string   "phone"
     t.integer  "business_id"
     t.index ["business_id"], name: "index_bookings_on_business_id", using: :btree
-    t.index ["customer_id"], name: "index_bookings_on_customer_id", using: :btree
     t.index ["service_id"], name: "index_bookings_on_service_id", using: :btree
   end
 
@@ -59,27 +55,6 @@ ActiveRecord::Schema.define(version: 20161124174755) do
     t.index ["service_id"], name: "index_businesses_on_service_id", using: :btree
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "phone_number"
-    t.index ["email"], name: "index_customers_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
-  end
-
   create_table "services", force: :cascade do |t|
     t.string   "name",        default: "", null: false
     t.integer  "duration"
@@ -91,7 +66,6 @@ ActiveRecord::Schema.define(version: 20161124174755) do
   end
 
   add_foreign_key "bookings", "businesses"
-  add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "services"
   add_foreign_key "businesses", "services"
   add_foreign_key "services", "businesses"
