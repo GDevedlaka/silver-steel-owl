@@ -9,6 +9,7 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
     @booking = Booking.new
     @services = @business.services
+
   end
 
   def edit

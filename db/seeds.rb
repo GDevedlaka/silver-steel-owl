@@ -17,8 +17,10 @@ judysnails = Business.create!(address: "10 Baker Street, London", name: "Judy's 
 checkup = Service.create!(name: "full checkup", price: 200, duration: 30, business: jimsdentist)
 filling = Service.create!(name: "filling", price: 100, duration: 15, business: jimsdentist)
 tooth = Service.create!(name: "tooth removal", price: 300, duration: 60, business: jimsdentist)
+haircut = Service.create!(name: "Haircut", price: 70, duration: 60, business: davesbarber)
 
-Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "pending", service: checkup)
-Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "approved", service: checkup)
-Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 300, status: "pending", service: tooth)
 
+Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "pending", service: checkup, business: jimsdentist)
+Booking.create!(email: "alex@me.com", booking_time: Time.now, price: 200, status: "approved", service: checkup, business: jimsdentist)
+Booking.create!(email: "matt@me.com", booking_time: Time.now, price: 300, status: "pending", service: tooth, business: jimsdentist)
+Booking.create!(email: "george@me.com", booking_time: Time.now, price: 30, status: "completed", service: haircut, business: davesbarber)
