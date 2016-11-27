@@ -20,6 +20,8 @@ gem "geocoder"
 gem 'coffee-rails'
 gem 'underscore-rails'
 gem "gmaps4rails"
+gem 'cloudinary', '1.1.0'
+gem "carrierwave"
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'

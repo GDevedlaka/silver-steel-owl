@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:description)
+    params.require(:business).permit(:description, :photo, :photo_cache)
   end
 end
 

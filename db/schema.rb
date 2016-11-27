@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125115933) do
+ActiveRecord::Schema.define(version: 20161127214233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20161125115933) do
     t.integer  "service_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.datetime "end_time"
-    t.datetime "start_time"
     t.string   "email"
     t.string   "name"
     t.string   "phone"
@@ -52,6 +50,7 @@ ActiveRecord::Schema.define(version: 20161125115933) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "description"
+    t.string   "photo"
     t.index ["email"], name: "index_businesses_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true, using: :btree
     t.index ["service_id"], name: "index_businesses_on_service_id", using: :btree

@@ -7,6 +7,7 @@ class Business < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   has_many :services, dependent: :destroy
   has_many :bookings
+  mount_uploader :photo, PhotoUploader
 end
 
 
