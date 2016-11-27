@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
    <div class="col-xs-12">
-     <h2>Page Desciption</h2>
+     <h2>Page Description</h2>
      <%= simple_form_for @business do |f| %>
        <%= f.input :description %>
-       <%= f.submit %>
+       <%= f.submit "Update Description" %>
      <% end %>
 
      <h2>Services</h2>
@@ -24,10 +24,17 @@
        </div>
        <div class="row">
          <div class="col-xs-12">
-           <%= f.submit %>
+           <%= f.submit "Add Service" %>
          </div>
        </div>
      <% end %>
+
+     <h2>Photos</h2>
+      <%= simple_form_for @business do |f| %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Upload Image"%>
+      <% end %>
    </div>
   </div>
 </div>
