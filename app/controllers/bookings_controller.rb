@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    respond_to :html, :json
   end
 
   def show

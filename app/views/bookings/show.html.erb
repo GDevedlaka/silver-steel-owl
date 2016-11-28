@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <% @booking do |s| %>
+       <div class="card">
+          <ul>
+          <li><%= s.email %></li>
+          <li>£<%= s.price %></li>
+          <li><%= s.status %></li>
+       </div>
+       <% end %>
+  </div>
+</div>

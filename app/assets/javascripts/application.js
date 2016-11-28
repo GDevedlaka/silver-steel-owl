@@ -7,8 +7,6 @@
 //= require jquery.minicolors.simple_form
 //= require gmaps/google
 //= require bootstrap-datetimepicker
-//= require_tree .
 //= require moment
 //= require fullcalendar
-
-$('#calendar').fullCalendar({});
+//= require_tree .
