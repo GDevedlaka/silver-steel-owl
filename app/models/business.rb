@@ -8,8 +8,9 @@ class Business < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   after_create :send_welcome_email
   has_many :services, dependent: :destroy
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
+  mount_uploader :logo, LogoUploader
 
   private
 

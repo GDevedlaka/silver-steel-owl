@@ -23,6 +23,8 @@
   </div>
 </div>
 
+
+<div class="wrapper" style="background-color: <%= @business.background %>">
 <div class="container" style="margin-top: 50px;">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
@@ -42,10 +44,16 @@
       <% if @business.photo? %>
         <%= image_tag @business.photo, width: 300, height: 300, crop: :fill %>
       <% else %>
+        <%= image_tag "randomimage/0.jpeg" %>
+      <% end %>
+      <% if @business.logo? %>
+        <%= image_tag @business.logo, width: 300, height: 300, crop: :fill %>
+      <% else %>
         <%= image_tag "djinn2.png" %>
       <% end %>
       </div>
   </div>
+</div>
 </div>
 
 <div class="container" style="margin-top: 100px; margin-bottom: 50px;">
