@@ -15,7 +15,7 @@ class Business < ApplicationRecord
   private
 
   def send_welcome_email
-    BusinessMailer.welcome(self).deliver_now if Rails.env.development
+    BusinessMailer.welcome(self).deliver_now
   end
 end
 
