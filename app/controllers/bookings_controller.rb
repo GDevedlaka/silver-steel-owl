@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @business = Business.find(params[:business_id])
+    parsed_booking_time = DateTime.strptime(params[:booking][:booking_time], '%m/%d/%Y %H:%M %p')
+    @booking.booking_time = parsed_booking_time
     @booking.business = @business
     if @booking.save
       redirect_to business_path(@business)

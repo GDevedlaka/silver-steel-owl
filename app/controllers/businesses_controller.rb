@@ -26,11 +26,10 @@ class BusinessesController < ApplicationController
       flash[:alert] = "An error has occured."
     end
   end
-
   private
 
   def business_params
-    params.require(:business).permit(:description, :photo, :photo_cache)
+    params.require(:business).permit(:description, :photo, :background, :photo_cache, :logo, :logo_cache)
   end
 end
 
