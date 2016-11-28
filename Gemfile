@@ -22,6 +22,7 @@ gem 'underscore-rails'
 gem "gmaps4rails"
 gem 'cloudinary', '1.1.0'
 gem "carrierwave"
+gem 'fullcalendar-rails'
 
 gem "letter_opener", group: :development
 

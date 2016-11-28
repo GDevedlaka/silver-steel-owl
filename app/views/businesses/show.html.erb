@@ -57,7 +57,8 @@
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
         <%= f.association :service %>
-      <div class="form-actions">
+        <%= f.input :booking_time %>
+      <div class="form-actions" style="margin-top: 20px;">
         <%= f.submit "Book", class: "btn btn-primary", style: "width: 100%" %>
       </div>
       <% end %>
