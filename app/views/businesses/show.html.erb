@@ -56,7 +56,13 @@
         <%= f.input :email, required: true, placeholder: "your@name.com" %>
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
-        <%= f.association :service %>
+
+        <div class="row">
+          <div class="col-xs-12">
+             <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
+          </div>
+        </div>
+        <%= f.association :service, prompt: "Choose a service" %>
       <div class="form-actions">
         <%= f.submit "Book", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 100%; padding: 20px;"  %>
       </div>
