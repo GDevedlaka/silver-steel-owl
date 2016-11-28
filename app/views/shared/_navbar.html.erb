@@ -1,7 +1,5 @@
-
-
 <div class="navbar-wagon <%= business_signed_in? ? "navbar-business" : "navbar-public" %>">
-  <!-- Logo -->
+
   <% if business_signed_in? %>
     <%= link_to business_path(current_business), class: "navbar-wagon-brand" do %>
       <% if current_business.logo? %>
@@ -18,29 +16,16 @@
     <% end %>
   <% end %>
 
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right">
-
-    <!-- Search form -->
-    <!--<form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>-->
 
     <% if business_signed_in? %>
 
-      <!-- Notification -->
       <% link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="badge badge-blue">3</div>
         </div>
       <% end %>
-
-      <!-- Profile picture and dropdown -->
-
 
       <%= link_to business_path(current_business), class: "navbar-wagon-item navbar-wagon-link" do %>
         <i class="fa fa-home"></i> Homepage
@@ -61,13 +46,6 @@
         <i class="fa fa-sign-out"></i> Log Out
       <% end %>
 
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% render 'shared/business_dropdown' %>
-        </div>
-      </div>
-
     <% else %>
 
       <% if params[:action] == "home" %>
@@ -77,10 +55,5 @@
         </div>
       <% end %>
     <% end %>
-
-    <!-- Button (call-to-action) -->
-    <% link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
-
-
 </div>

@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    respond_to :html, :json
   end
 
   def show
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:email, :name, :phone, :service_id)
+    params.require(:booking).permit(:email, :name, :phone, :service_id, :booking_time)
   end
 end
 

@@ -1,11 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0, 0.6) 0%, rgba(0,0,0, 0.6) 50%), url('<%= @business.photo? ? image_path(@business.photo.url) : image_path('randomimage/0.jpeg') %>');">
 
 
-  <div class="banner-content text-center">
-    <h1><strong><%= @business.name %></strong></h1>
-    <p><%= @business.address %></p>
-    <%= link_to "Book an appointment" ,"#booking-form", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none;" %>
-  </div>
+<div class="banner-content text-center">
+  <h1><strong><%= @business.name %></strong></h1>
+  <p><%= @business.address %></p>
+  <%= link_to "Book an appointment" ,"#booking-form", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none;" %>
+</div>
 
 </div>
 
@@ -30,22 +30,22 @@
 
 
 <div class="wrapper" style="background-color: <%= @business.background %>">
-<div class="container business-services padded" style="margin-top: 50px;">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h2>Our Services</h2>
-      <div class="services">
-        <% @services.each do |service| %>
-         <div class="service">
-          <h3><%= service.name%></h3>
-          <p>£<%= service.price%></p>
-          <p><i class="fa fa-clock-o"></i> <%= service.duration%> min</p>
-         </div>
-         <% end %>
+  <div class="container business-services padded" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Our Services</h2>
+        <div class="services">
+          <% @services.each do |service| %>
+           <div class="service">
+            <h3><%= service.name%></h3>
+            <p>£<%= service.price%></p>
+            <p><i class="fa fa-clock-o"></i> <%= service.duration%> min</p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <div class="container" id="booking-form" style="margin-top: 100px; margin-bottom: 50px;">
@@ -56,7 +56,6 @@
         <%= f.input :email, required: true, placeholder: "your@name.com" %>
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
-
         <div class="row">
           <div class="col-xs-12">
              <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
