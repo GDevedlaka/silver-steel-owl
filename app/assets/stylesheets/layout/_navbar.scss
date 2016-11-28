@@ -10,9 +10,15 @@
   justify-content: space-between;
 }
 
-.navbar-home {
-  background: transparent !important;
+.navbar-business {
   position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-public {
+  background: transparent !important;
+  position: absolute;
   width: 100%;
   box-shadow: none !important;
   a {

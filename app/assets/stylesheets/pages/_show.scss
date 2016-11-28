@@ -1,3 +1,32 @@
-.banner-content {
+.business-info {
+  p {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+}
 
+.business-services {
+  color: white;
+  font-size: 20px;
+  h2 {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
+}
+.services {
+  display: flex;
+  justify-content: space-around;
+}
+.service {
+  flex: 1 0 auto;
+  background-color: white;
+  color: black;
+  margin: 10px;
+  p {
+    color: grey;
+  }
+}
+#booking-form {
+  padding-top: 100px;
 }
