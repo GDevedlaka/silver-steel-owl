@@ -1,0 +1,59 @@
+.business-edit {
+  h2 {
+    font-size: 23px;
+  }
+  img {
+    height: 50px;
+  }
+}
+.edit-box {
+  background: #F5F5F5;
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin: 10px;
+  min-height: 400px;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 0 10px;
+  height: 40px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  h3 {
+    margin: 0px;
+    font-size: 20px;
+    flex: 30% 0 0;
+  }
+  p {
+    margin: 0px;
+  }
+  .fa-trash {
+    color: lightgrey;
+  }
+}
+
+.design-section h3 {
+  display: flex;
+  align-items: center;
+  span {
+    margin-right: 20px;
+  }
+}
+
+.number {
+  width: 40px;
+  height: 40px;
+  background: #868080;
+  /* display: inline-block; */
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+}
