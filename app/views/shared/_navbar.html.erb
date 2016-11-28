@@ -1,4 +1,6 @@
-<div class="navbar-wagon">
+
+
+<div class="navbar-wagon <%= params[:action] == "home" ? "navbar-home" : "" %>">
   <!-- Logo -->
   <% if business_signed_in? %>
   <%= link_to business_path(current_business), class: "navbar-wagon-brand" do %>
