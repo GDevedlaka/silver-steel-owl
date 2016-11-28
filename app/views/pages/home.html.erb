@@ -1,9 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "randomimage/#{rand(6)}.jpg" %>');">
+<% number = rand(6) %>
+<% next_number = (number + 1) % 6 %>
+
+<div class="banner banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0, 0.6) 0%, rgba(0,0,0, 0.6) 50%), url('<%= image_path "randomimage/#{number}.jpg" %>');">
  <div class="banner-content">
 
     <h1>Do you own a business?</h1>
     <p>Create your website and handle bookings in 10 minutes.</p>
-    <%= link_to "Sign Up" ,new_business_registration_path, class: "btn btn-primary" %>
-
+    <%= link_to "Create your website" ,new_business_registration_path, class: "btn btn-primary" %>
   </div>
 </div>
+
+<%= content_for :after_js do %>
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+
+      $('.banner').fadeTo(300, 1, function()
+      {
+        $(this).css('background-image', 'linear-gradient(-225deg, rgba(0,0,0, 0.6) 0%, rgba(0,0,0, 0.6) 50%), url(' + "<%= image_path "randomimage/#{next_number}.jpeg" %>" + ')');
+      }).fadeTo(300, 1);
+
+    }, 4000);
+  });
+</script>
+<% end %>
