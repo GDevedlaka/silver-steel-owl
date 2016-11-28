@@ -20,7 +20,7 @@ class BusinessesController < ApplicationController
   def update
     @business = Business.find(params[:id])
     if @business.update(business_params)
-      redirect_to business_path(@business)
+      redirect_to edit_business_path(@business)
     else
       redirect_to edit_business_path(@business)
       flash[:alert] = "An error has occured."

@@ -5,12 +5,15 @@ class ServicesController < ApplicationController
     @business = Business.find(params[:business_id])
     @service.business = @business
     if @service.save
-      redirect_to business_path(@business)
-      flash[:notice] = "Service added."
     else
       redirect_to business_path(@business)
       flash[:alert] = "An error occurred."
     end
+  end
+
+  def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
   end
 
   private

@@ -1,0 +1,10 @@
+<div class="service-card" id="<%= service.id %>">
+  <h3><%= service.name%></h3>
+  <p>£<%= service.price%></p>
+  <p><i class="fa fa-clock-o"></i> <%= service.duration%> min</p>
+  <p>
+    <%= link_to business_service_path(current_business, service), method: :delete, remote: true  do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </p>
+</div>
