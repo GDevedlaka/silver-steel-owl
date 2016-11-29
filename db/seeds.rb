@@ -23,9 +23,12 @@ filling = Service.create!(name: "filling", price: 100, duration: 15, business: j
 tooth = Service.create!(name: "tooth removal", price: 300, duration: 60, business: jimsdentist)
 haircut = Service.create!(name: "Haircut", price: 70, duration: 60, business: davesbarber)
 consulation = Service.create!(name: "consulation", price: 70, duration: 180, business: jimsdentist)
+orthodontist = Service.create!(name: "0rthodontist", price: 200, duration: 280, business: jimsdentist)
 
-Booking.create!(email: "alex@me.com", booking_time: Time.now + 300, price: 200, status: "pending", service: checkup, business: jimsdentist)
+
+Booking.create!(email: "joel@me.com", booking_time: Time.now + 300, price: 200, status: "pending", service: checkup, business: jimsdentist)
 Booking.create!(email: "alex@me.com", booking_time: Time.now + 400, price: 200, status: "approved", service: checkup, business: jimsdentist)
 Booking.create!(email: "matt@me.com", booking_time: Time.now, price: 300, status: "pending", service: tooth, business: jimsdentist)
-Booking.create!(email: "george@me.com", booking_time: Time.now + 1000, price: 30, status: "completed", service: haircut, business: davesbarber)
+Booking.create!(email: "steve@me.com", booking_time: Time.now + 1000, price: 30, status: "completed", service: haircut, business: davesbarber)
 Booking.create!(email: "george@me.com", booking_time: Time.now + 2000, price: 30, status: "completed", service: consulation, business: jimsdentist)
+Booking.create!(email: "boris@me.com", booking_time: Time.now + 450, price: 200, status: "avalible", service: orthodontist, business: jimsdentist)
