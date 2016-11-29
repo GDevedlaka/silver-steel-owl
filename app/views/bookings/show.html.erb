@@ -1,14 +1,12 @@
 <div class="container">
   <div class="row">
-    <% @booking.each do |s| %>
 
        <div class="card">
           <ul>
-          <li><%= s.email %></li>
-          <li>£<%= s.price %></li>
-          <li><%= s.status %></li>
+          <li><%= @booking.email %></li>
+          <li>£<%= @booking.price %></li>
+          <li><%= @booking.status %></li>
           </ul>
        </div>
-       <% end %>
   </div>
 </div>
