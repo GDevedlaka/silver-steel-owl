@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128120510) do
+ActiveRecord::Schema.define(version: 20161129174505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "booking_time"
-    t.integer  "price"
     t.string   "status"
     t.integer  "service_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "email"
     t.string   "name"
     t.string   "phone"
     t.integer  "business_id"
+    t.integer  "price_pennies", default: 0, null: false
     t.index ["business_id"], name: "index_bookings_on_business_id", using: :btree
     t.index ["service_id"], name: "index_bookings_on_service_id", using: :btree
   end

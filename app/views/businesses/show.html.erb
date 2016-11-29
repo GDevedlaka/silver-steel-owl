@@ -52,7 +52,7 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <h3 class="text-center">Make a booking for <%= @business.name %></h3>
-      <%= simple_form_for [@business, @booking] do |f| %>
+      <%= simple_form_for([@business, @booking], remote: true) do |f| %>
         <%= f.input :email, required: true, placeholder: "your@name.com" %>
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
@@ -61,19 +61,21 @@
              <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
           </div>
         </div>
-        <%= f.association :service, collection: @business.services,prompt: "Choose a service" %>
-      <div class="form-actions">
-        <%= f.submit "Book", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 100%; padding: 20px;"  %>
-      </div>
+        <%= f.association :service, collection: @business.services, prompt: "Choose a service" %>
+        <%= f.button :submit, class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 100%; padding: 20px;" %>
       <% end %>
+      <div id="stripe-container" class="text-center"></div>
     </div>
   </div>
 </div>
 
 
+
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
-    $(document).ready(function() {
+  $(document).ready(function() {
+
       var handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map'}, provider: {styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"<%= @business.background%>"},{"visibility":"on"}]}]} }, function() {
         markers = handler.addMarkers([
@@ -104,6 +106,7 @@
         }
 
       });
+
     });
   <% end %>
 <% end %>

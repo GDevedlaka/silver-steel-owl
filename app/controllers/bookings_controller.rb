@@ -17,12 +17,24 @@ class BookingsController < ApplicationController
     parsed_booking_time = DateTime.strptime(params[:booking][:booking_time], '%m/%d/%Y %H:%M %p')
     @booking.booking_time = parsed_booking_time
     @booking.business = @business
+    @booking.price = @booking.service.price
+    @booking.status = 'pending'
     if @booking.save
-      redirect_to business_path(@business)
-      flash[:notice] = "Your booking has been made. You will receive confirmation by email shortly."
+      respond_to do |format|
+        format.html {
+          redirect_to root_path
+          flash[:notice] = "Your booking has been made. You will receive confirmation by email shortly."
+        }
+        format.js
+      end
     else
-      redirect_to business_path(@business)
-      flash[:alert] = "An error has occurred. Please try again."
+      respond_to do |format|
+        format.html {
+          redirect_to business_path(@business)
+          flash[:alert] = "An error has occurred. Please try again."
+        }
+        format.js
+      end
     end
   end
 
