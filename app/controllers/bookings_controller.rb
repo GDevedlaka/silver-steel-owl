@@ -14,11 +14,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @business = Business.find(params[:business_id])
-    parsed_booking_time = DateTime.strptime(params[:booking][:booking_time], '%m/%d/%Y %H:%M %p')
+    parsed_booking_time = DateTime.strptime(params[:booking][:booking_time], '%m/%d/%Y %H:%M %p') unless parsed_booking_time.nil?
     @booking.booking_time = parsed_booking_time
     @booking.business = @business
+    @booking.price = @booking.service.price
+    @booking.status = 'pending'
     if @booking.save
-      redirect_to business_path(@business)
+      redirect_to new_business_booking_payment_path(booking_id: @booking.id)
       flash[:notice] = "Your booking has been made. You will receive confirmation by email shortly."
     else
       redirect_to business_path(@business)

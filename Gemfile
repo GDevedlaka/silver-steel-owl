@@ -8,6 +8,8 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
+gem 'money-rails'
+gem 'stripe'
 gem 'simple_calendar', '~> 2.2', '>= 2.2.1'
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -43,5 +45,3 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-

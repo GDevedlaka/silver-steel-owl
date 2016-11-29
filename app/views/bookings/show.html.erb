@@ -4,7 +4,7 @@
        <div class="card">
           <ul>
           <li><%= @booking.email %></li>
-          <li>£<%= @booking.price %></li>
+          <li><%= humanized_money_with_symbol(@booking.price) %></li>
           <li><%= @booking.status %></li>
           </ul>
        </div>
