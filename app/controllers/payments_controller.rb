@@ -6,12 +6,12 @@ class PaymentsController < ApplicationController
 
   def create
     customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
-  @booking.update(status: 'paid')
-  redirect_to booking_path(@booking)
+    @booking.update(status: 'paid')
+    redirect_to booking_path(@booking)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

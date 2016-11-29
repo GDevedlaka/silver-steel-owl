@@ -52,7 +52,7 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <h3 class="text-center">Make a booking for <%= @business.name %></h3>
-      <%= simple_form_for [@business, @booking], remote: true do |f| %>
+      <%= simple_form_for([@business, @booking], remote: true) do |f| %>
         <%= f.input :email, required: true, placeholder: "your@name.com" %>
         <%= f.input :name, placeholder: "George D." %>
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
@@ -61,22 +61,15 @@
              <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
           </div>
         </div>
-        <%= f.association :service, collection: @business.services,prompt: "Choose a service" %>
-      <div class="form-actions">
-        <%= f.submit "Book & pay in store", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 50%; padding: 20px;" %>
-
-      </div>
+        <%= f.association :service, collection: @business.services, prompt: "Choose a service" %>
+        <%= f.button :submit, class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 100%; padding: 20px;" %>
       <% end %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="My Teddy"
-          data-description="Teddy <%= @booking.id %>"
-          data-amount="<%= @booking.price_pennies %>"
-          data-currency="<%= @booking.price.currency %>">
-        </script>
+      <div id="stripe-container" class="text-center"></div>
     </div>
   </div>
 </div>
+
+
 
 
 <% content_for(:after_js) do %>

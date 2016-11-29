@@ -1,0 +1,12 @@
+
+<h3 class="text-center">Confirm booking</h3>
+
+<%= form_tag booking_payments_path(@booking) do %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="Booking"
+    data-description="Booking:<%= @booking.id %>"
+    data-amount="<%= @booking.price_pennies %>"
+    data-currency="<%= @booking.price.currency %>">
+  </script>
+<% end %>

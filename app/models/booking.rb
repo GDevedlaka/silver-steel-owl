@@ -3,6 +3,10 @@ class Booking < ApplicationRecord
   belongs_to :business
   #after_create :send_confirmation_email
 
+  # validates :booking_time, presence: true
+  # validates :name, presence: true
+  # validates :phone, presence: true
+
   monetize :price_pennies
 
   private
