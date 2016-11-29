@@ -61,7 +61,7 @@
              <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
           </div>
         </div>
-        <%= f.association :service, prompt: "Choose a service" %>
+        <%= f.association :service, collection: @business.services,prompt: "Choose a service" %>
       <div class="form-actions">
         <%= f.submit "Book", class: "btn btn-primary", style: "background-color: #{@business.background}; border: none; width: 100%; padding: 20px;"  %>
       </div>

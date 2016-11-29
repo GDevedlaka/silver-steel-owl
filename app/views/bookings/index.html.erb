@@ -6,7 +6,7 @@
 <div class="bookings">
 <h1><center> You have <%=@bookings.size %> Bookings </center></h1>
 </div>
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-sm-10 col-sm-offset-1">
     <div id="calendar"></div>
   </div>
 </div>
@@ -15,6 +15,11 @@
 <%= content_for (:after_js) do %>
   <script>
     $('#calendar').fullCalendar({
+      header: {
+        left: 'today,month,agendaWeek,agendaDay',
+        center: 'title',
+        right: 'prev,next'
+      },
       events: '<%= business_bookings_path(format: :json) %>'
     });
   </script>
