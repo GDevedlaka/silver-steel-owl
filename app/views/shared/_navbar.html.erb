@@ -2,14 +2,8 @@
 
   <% if business_signed_in? %>
     <%= link_to business_path(current_business), class: "navbar-wagon-brand" do %>
-      <% if current_business.logo? %>
-        <%= image_tag current_business.logo %>
-      <% else %>
         <%= image_tag "djinn2.png" %>
-      <% end %>
     <% end %>
-
-
   <% else %>
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "djinn2.png" %>
