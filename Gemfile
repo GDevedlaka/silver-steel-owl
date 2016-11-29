@@ -23,8 +23,7 @@ gem "gmaps4rails"
 gem 'cloudinary', '1.1.0'
 gem "carrierwave"
 gem 'fullcalendar-rails'
-
-gem "letter_opener", group: :development
+gem 'bootstrap_form_extensions'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
@@ -35,6 +34,8 @@ gem 'devise'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
+
+  gem 'letter_opener'
 
   gem 'pry-byebug'
   gem 'pry-rails'

@@ -9,4 +9,5 @@
 //= require bootstrap-datetimepicker
 //= require moment
 //= require fullcalendar
+//= require bootstrap_form_extensions
 //= require_tree .
