@@ -9,6 +9,15 @@
 @import "font-awesome";
 @import 'bootstrap-datetimepicker';
 @import "jquery.minicolors";
+@import "fullcalendar";
+
+@import "bootstrap_form_extensions/common";
+@import "bootstrap_form_extensions/bootstrap-timepicker.min";
+@import "bootstrap_form_extensions/duration";
+@import "bootstrap_form_extensions/scheduler";
+@import "bootstrap_form_extensions/select_or_new";
+@import "bootstrap_form_extensions/submit_bar";
+
 
 // Your CSS
 @import "layout/index";
@@ -17,4 +26,3 @@
 @import "vendor/index";
 
 
-@import "fullcalendar";
