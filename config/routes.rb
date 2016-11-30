@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  constraints subdomain: '' do
+  constraints subdomain: ['', 'www'] do
     root to: 'pages#home', as: :home
   end
 
-  root to: 'pages#home'
-  # root to: 'businesses#show'
+  # root to: 'pages#home'
+  root to: 'businesses#show'
 end
