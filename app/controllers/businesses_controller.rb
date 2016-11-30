@@ -6,10 +6,11 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
+    @business = Business.find_by_url(request.subdomain)
+    render status: 404, file: 'public/404.html' and return unless @business
+
     @booking = Booking.new
     @services = @business.services
-
   end
 
   def edit

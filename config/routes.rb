@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :bookings, only: [] do
     resources :payments, only: [:new, :create]
   end
-  root to: 'pages#home'
+
+  constraints subdomain: '' do
+    root to: 'pages#home'
+  end
+
+  root to: 'businesses#show'
   #business_root to: ''
 end
