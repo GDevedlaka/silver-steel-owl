@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :service
   belongs_to :business
-  #after_create :send_confirmation_email
+  after_create :send_confirmation_email
 
   private
 

@@ -1,5 +1,6 @@
 <style>
   div {
+    font-family: 'Source Sans Pro', sans-serif;
   }
 </style>
 
@@ -8,9 +9,13 @@
 
 <p>
   We look forward to helping you with your bookings and appointments.
-  If you have any questions please don't hesitate to get in touch with us at *make a link*info@djinn.com.
+  If you have any questions please don't hesitate to get in touch with us at <%= link_to user_path(@user) do %>
+      info@djinn.com.
+    <% end %>
 </p>
 
 <h4>Next steps</h4>
-<p>Click here*link* to customize you page, upload photos and more!</p>
+<p><%= link_to edit_business_path(@business) do %>
+  Click here
+<% end %> to customize you page, upload photos and more!</p>
 </div>

@@ -1,11 +1,14 @@
 <style>
   div {
+    font-family: 'Source Sans Pro', sans-serif;
   }
 </style>
 
 <div>
-<h3>You have successfully created an appointment, <%= @booking.name %>!</h3>
+<h3>You have successfully created an appointment, <%= @booking.name.upcase %>!</h3>
 
 <p>
-  If you have any questions please don't hesitate to get in touch with us at  <%= Business.find(@booking.business_id).email %>.
+  If you have any questions please don't hesitate to get in touch with us at  <%= link_to user_path(@user) do %>
+    <%= Business.find(@booking.business_id).email %>
+  <% end %>.
 </p>

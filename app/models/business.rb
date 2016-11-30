@@ -6,7 +6,7 @@ class Business < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-  #after_create :send_welcome_email
+  after_create :send_welcome_email
   has_many :services, dependent: :destroy
   has_many :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
