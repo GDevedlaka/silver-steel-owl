@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @service = Service.find(@booking.service_id)
   end
 
   def create

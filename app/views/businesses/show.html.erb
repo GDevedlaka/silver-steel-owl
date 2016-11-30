@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0, 0.6) 0%, rgba(0,0,0, 0.6) 50%), url('<%= @business.photo? ? image_path(@business.photo.url) : image_path('randomimage/0.jpeg') %>');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0, 0.6) 0%, rgba(0,0,0, 0.6) 50%), url('<%= @business.photo? ? image_path(@business.photo.url) : ""; %>');">
 
 
 <div class="banner-content text-center">
@@ -10,7 +10,7 @@
 </div>
 
 <div class="container padded business-info">
-  <h2 class="text-center" style="border-bottom: 3px solid <%= @business.background %>; padding-bottom: 10px; width: 30%; margin: 0 auto;">More infos</h2>
+  <h2 class="text-center" style="border-bottom: 3px solid <%= @business.background %>; padding-bottom: 10px; width: 30%; margin: 0 auto;">About us</h2>
   <div class="row" style="margin-top: 50px">
     <div class="col-xs-12 col-sm-5 col-sm-offset-1">
       <% if @business.description? %>
