@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     if @booking.save
       respond_to do |format|
         format.html {
-          redirect_to root_path
+          redirect_to home_url
           flash[:notice] = "Your booking has been made. You will receive confirmation by email shortly."
         }
         format.js

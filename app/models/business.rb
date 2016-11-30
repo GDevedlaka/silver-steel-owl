@@ -11,7 +11,7 @@ class Business < ApplicationRecord
   has_many :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   mount_uploader :logo, LogoUploader
-
+  validates :url, uniqueness: true, presence: true
   private
 
   def send_welcome_email
