@@ -11,6 +11,7 @@
           <div class="form-inputs">
             <%= f.input :address, required: true, placeholder: "22 Elder Street, London" %>
             <%= f.input :name, placeholder: "Shoreditch Dentist" %>
+            <%= f.input :url, required: true, placeholder: "shoreditch-dentist", wrapper: :prepend_append %>
             <%= f.input :email, required: true, autofocus: true, placeholder: "shoreditch-dentist@gmail.com"%>
             <%= f.input :password, required: true, placeholder: "•••••••", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation, placeholder: "•••••••", required: true %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :businesses
+  devise_for :businesses, controllers: { registrations: 'registrations', sessions: 'sessions' }
   resources :businesses, except: [:destroy, :index] do
     resources :services, only: [:create, :destroy]
     resources :bookings, except: [:new, :edit]
@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   end
 
   constraints subdomain: '' do
-    root to: 'pages#home'
+    root to: 'pages#home', as: :home
   end
 
   root to: 'businesses#show'
-  #business_root to: ''
 end
