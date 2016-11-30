@@ -12,6 +12,5 @@ Rails.application.routes.draw do
     root to: 'pages#home', as: :home
   end
 
-  # root to: 'pages#home'
   root to: 'businesses#show'
 end
