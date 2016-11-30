@@ -5,6 +5,7 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="Booking"
+    data-email="<%= @booking.email %>"
     data-description="Booking:<%= @booking.id %>"
     data-amount="<%= @booking.price_pennies %>"
     data-currency="<%= @booking.price.currency %>">
