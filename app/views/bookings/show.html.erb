@@ -1,12 +1,13 @@
-<div class="container">
+<div class="container" style="padding-top: 200px; margin-bottom: 330px;">
   <div class="row">
+    <div class="card">
+      <% booking = @booking.booking_time %>
+      <h2>Booking on <%= booking.strftime("%B %d") %> at <%= booking.strftime("%H:%M") %></h2>
 
-       <div class="card">
-          <ul>
-          <li><%= @booking.email %></li>
-          <li><%= humanized_money_with_symbol(@booking.price) %></li>
-          <li><%= @booking.status %></li>
-          </ul>
-       </div>
-  </div>
+
+        <li><%= @booking.email %></li>
+        <li><%= humanized_money_with_symbol(@service.price) %></li>
+        <li><%= @booking.status %></li>
+      </div>
+    </div>
 </div>
