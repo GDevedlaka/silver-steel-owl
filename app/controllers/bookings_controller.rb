@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @services = @bookings.map {|b| b.service.name }.uniq
-    @colors = %w(red blue #FFFFE5 green purple brown orange black)
+    @colors = %w(red blue green purple brown orange black)
 
     respond_to :html, :json
   end
