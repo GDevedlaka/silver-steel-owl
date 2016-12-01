@@ -11,7 +11,8 @@ class PaymentsController < ApplicationController
     )
 
     @booking.update(status: 'paid')
-    redirect_to booking_path(@booking)
+    redirect_to root_path
+
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
