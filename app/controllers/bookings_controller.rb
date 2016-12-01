@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = current_business.bookings
     @services = @bookings.map {|b| b.service.name }.uniq
     @colors = %w(red blue green purple brown orange black)
 
