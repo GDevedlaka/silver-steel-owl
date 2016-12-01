@@ -20,7 +20,8 @@ class BookingsController < ApplicationController
     @booking.business = @business
     @booking.price = @booking.service.price
     @booking.status = 'pending'
-    if @booking.save
+    @saved = @booking.save
+    if @saved
       respond_to do |format|
         format.html {
           redirect_to home_url

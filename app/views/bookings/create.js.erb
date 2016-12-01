@@ -1,1 +1,5 @@
+<% if @saved %>
 $('#stripe-container').html("<%= j render 'shared/stripe' %>");
+<% else %>
+alert("This time is not available, <%= j @business.name.html_safe %> is busy at these times: <%= current_business.bookings.on(@booking.booking_time).map(&:time).join(', ').html_safe %>.");
+<% end %>
