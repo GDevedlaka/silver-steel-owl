@@ -1,7 +1,12 @@
 
 <h3 class="text-center">Your booking has been created!</h3>
+<% stripe_accept = false %>
+<% if stripe_accept == false %>
+<p><%= @business.name %> is not currently accepting online payment.</p>
+<p>Please pay <%= @business.name %> on site.</p>
+<% else %>
 <p><%= @business.name %> is accepting online payment.</p>
-<p>You can pay at <%= @business.name %> if you wish, or click on the button below to pay now.</p>
+<p>You may pay <%= @business.name %> on site or use the button below to pay through Stripe.</p>
 
 <%= form_tag booking_payments_path(@booking) do %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -12,4 +17,5 @@
     data-amount="<%= @booking.price_pennies %>"
     data-currency="<%= @booking.price.currency %>">
   </script>
+<% end %>
 <% end %>
