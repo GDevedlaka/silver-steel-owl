@@ -58,7 +58,7 @@
         <%= f.input :phone, placeholder: "+44 7802 969 373" %>
         <div class="row">
           <div class="col-xs-12">
-             <%= f.input :booking_time, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
+             <%= f.input :booking_time, required: true, as: :string, placeholder: "Choose a time", input_html:  {id: "booking-datepicker"}%>
           </div>
         </div>
         <%= f.association :service, collection: @business.services, prompt: "Choose a service" %>
