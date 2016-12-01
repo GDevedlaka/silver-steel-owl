@@ -16,15 +16,17 @@
       <% if @business.description? %>
         <p><%= @business.description %></p>
       <% else %>
-        <p>Write about <%=@business.name%> here.
-          <%= link_to edit_business_path(@business) do %>
-            <i class="fa fa-pencil"></i></p>
-          <% end %>
         <% end %>
       </div>
+      <% if @business.description?  %>
     <div class="col-xs-12 col-sm-5">
       <div id="map" style="height: 400px;"></div>
     </div>
+    <% else  %>
+    <div class="col-xs-12 col-sm-12">
+      <div id="map" style="height: 400px;"></div>
+    </div>
+    <% end %>
   </div>
 </div>
 
@@ -48,7 +50,7 @@
   </div>
 </div>
 
-<div class="container" id="booking-form" style="margin-top: 100px; margin-bottom: 50px;">
+<div class="container" id="booking-form" style="margin-bottom: 50px;">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <h3 class="text-center">Make a booking for <%= @business.name %></h3>
