@@ -2,12 +2,19 @@
   <div class="row">
     <div class="card">
       <% booking = @booking.booking_time %>
-      <h2>Booking on <%= booking.strftime("%B %d") %> at <%= booking.strftime("%H:%M") %></h2>
-
-
-        <li><%= @booking.email %></li>
-        <li><%= humanized_money_with_symbol(@service.price) %></li>
-        <li><%= @booking.status %></li>
-      </div>
+        <h3>Booking at <%= booking.strftime("%H:%M") %> on <%= booking.strftime("%B %d") %></h3>
+          <ul>
+            <% if @booking.name %>
+            <li> <%= @booking.name %></li>
+            <% end %>
+            <li><%= @service.name %>, <%= humanized_money_with_symbol(@service.price) %></li>
+            <li><%= @booking.email %></li>
+            <% if @booking.phone %>
+            <li> <%= @booking.phone %></li>
+            <% end %>
+          </ul>
+          <btn style="color: red;">Cancel this booking</btn>
+          <p><%= link_to "Back to #{@booking.business.name}", business_path(@booking.business) %></p>
     </div>
+  </div>
 </div>
