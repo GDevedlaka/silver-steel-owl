@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
 
   before_validation :set_booking_end_time
 
-  validate :check_no_overlaps
+  #  validate :check_no_overlaps
 
   # validates :booking_time, presence: true
   # validates :name, presence: true
